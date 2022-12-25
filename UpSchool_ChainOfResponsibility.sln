@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpSchool_ChainOfResponsibility", "UpSchool_ChainOfResponsibility\UpSchool_ChainOfResponsibility.csproj", "{CCD50236-3C5A-4154-A27F-02CBF4A41CAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCD50236-3C5A-4154-A27F-02CBF4A41CAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCD50236-3C5A-4154-A27F-02CBF4A41CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCD50236-3C5A-4154-A27F-02CBF4A41CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCD50236-3C5A-4154-A27F-02CBF4A41CAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52940B3E-2264-4246-BC0B-2FD508EDD835}
+	EndGlobalSection
+EndGlobal
