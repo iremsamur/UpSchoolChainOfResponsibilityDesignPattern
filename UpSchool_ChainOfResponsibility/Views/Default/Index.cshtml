@@ -1,0 +1,24 @@
+﻿@model WithdrawViewModel
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<div class="container">
+    <form method="post">
+        <br />
+        <label>
+            Müşteri Adı
+        </label>
+        <input type="text" class="form-control" asp-for="CustomerName" />
+        <br />
+        <label>Çekilecek Para Miktarı</label>
+        <input type="text" class="form-control" asp-for="Amount" />
+        <br />
+      
+        <button class="btn btn-outline-warning">Para Çekme Talebinde Bulun</button>
+
+    </form>
+
+</div>
+

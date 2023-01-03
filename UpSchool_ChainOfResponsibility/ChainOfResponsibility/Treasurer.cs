@@ -1,5 +1,6 @@
 ﻿using System;
 using UpSchool_ChainOfResponsibility.DAL;
+using UpSchool_ChainOfResponsibility.DAL.Entities;
 
 namespace UpSchool_ChainOfResponsibility.ChainOfResponsibility
 {
@@ -7,17 +8,21 @@ namespace UpSchool_ChainOfResponsibility.ChainOfResponsibility
     {
         //Treasurer'da bir çalışan olduğundan employee'dan miras alır
         //veznedar 
-        public override void ProcessRequest(WithdrawViewModel p)
+        public override void ProcessRequest(WithdrawViewModel req)
         {
-            if (p.Amount <= 40000)
+            if (req.Amount <= 40000)
             {
                 //db'ye kaydetme işlemi
                 using(var context = new Context())
                 {
-                    p.EmployeeName = "Veznedar - Ayşenur Yıldız";
-                    p.Description = "Müşteriye talep etmiş olduğu tutarın ödemesi gerçekleştirildi.";
-                    //context.BankProcesses.Add(p);
-                    //context.SaveChanges();
+                    BankProcess bankProcess = new BankProcess();
+                    //BankProcess bankProcess = new BankProcess();
+                    bankProcess.EmployeeName = "Veznedar - Ayşenur Yıldız";
+                    bankProcess.Description = "Müşteriye talep etmiş olduğu tutarın ödemesi gerçekleştirildi.";
+                    bankProcess.Amount = req.Amount;
+                    bankProcess.CustomerName = req.CustomerName;
+                    context.BankProcesses.Add(bankProcess);
+                    context.SaveChanges();
                 }
                 /*
                 //parmatre tutarı 40000'den küçükse o kişi tarafından onaylanır.
@@ -29,10 +34,22 @@ namespace UpSchool_ChainOfResponsibility.ChainOfResponsibility
             }
             else if (NextApprover != null)
             {
-                Console.WriteLine("{0} TL işlem tutarı {1} max. limitini aştığından işlem yöneticiye gönderildi.", p.Amount, this.GetType().Name);
-                //tutar o değerin 40000'in üzerinde ise yöneticiye gönderir
+                //NextApprover Zincirin sonraki elemanını yönlendirecek tarafı temsil eder.
+                using (var context = new Context())
+                {
+                    BankProcess bankProcess = new BankProcess();
+                    bankProcess.EmployeeName = "Veznedar - Ayşenur Yıldız";
+                    bankProcess.Description = "Müşterinin talep ettiği tutar yetkim dahilinde olmadığı için işlem Şube Müdür Yardımcısına gönderildi.";
+                    bankProcess.Amount = req.Amount;
+                    bankProcess.CustomerName = req.CustomerName;
+                    //Console.WriteLine("{0} TL işlem tutarı {1} max. limitini aştığından işlem yöneticiye gönderildi.", p.Amount, this.GetType().Name);
+                    //tutar o değerin 40000'in üzerinde ise yöneticiye gönderir
+                    context.BankProcesses.Add(bankProcess);
+                    context.SaveChanges();
 
-                NextApprover.ProcessRequest(p);
+                    NextApprover.ProcessRequest(req);
+                }
+                  
             }
         }
 

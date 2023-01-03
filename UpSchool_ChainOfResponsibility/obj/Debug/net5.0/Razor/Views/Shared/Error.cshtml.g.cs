@@ -26,8 +26,22 @@ using UpSchool_ChainOfResponsibility.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\User\Desktop\UpSchoolBootcamp\UpSchool_ChainOfResponsibility\UpSchool_ChainOfResponsibility\Views\_ViewImports.cshtml"
+using UpSchool_ChainOfResponsibility.DAL.Entities;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\User\Desktop\UpSchoolBootcamp\UpSchool_ChainOfResponsibility\UpSchool_ChainOfResponsibility\Views\_ViewImports.cshtml"
+using UpSchool_ChainOfResponsibility.ChainOfResponsibility;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d6a5625cc8fb4476f348b0fe9041c550465d8bf9", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"376e6296eb7785fddd16c287b9dc51d293d21f0c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"88b852e88e17354326317c15173b27b7c8349e8b", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ErrorViewModel>
     #nullable disable

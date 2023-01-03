@@ -1,4 +1,6 @@
-﻿namespace UpSchool_ChainOfResponsibility.ChainOfResponsibility
+﻿using UpSchool_ChainOfResponsibility.DAL.Entities;
+
+namespace UpSchool_ChainOfResponsibility.ChainOfResponsibility
 {
     public abstract class Employee
     {
